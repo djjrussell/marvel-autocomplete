@@ -5,9 +5,9 @@ import Main from './components/Main';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Main />
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 

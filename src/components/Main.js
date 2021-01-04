@@ -1,36 +1,69 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Input from "./Input";
 import SearchItems from './SearchItems'
-import { KEYS } from "../constants";
+import {KEYS} from "../constants";
 import MD5 from "crypto-js/md5";
 
-const Main = () => {
+class Main extends React.Component {
 
-    const [inputValue, setInputValue] = useState('');
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputValue: ' ',
+            heroes: [],
+        };
+        this.setInput = this.setInput.bind(this)
+        this.setHeroes = this.setHeroes.bind(this)
+    }
 
-    const getHeroNames = (input) => {
+    setInput(input) {
+        this.setState({inputValue: input})
+        if(input === '') {
+            this.setHeroes([])
+        }
+    }
+
+    setHeroes(heroes) {
+        if(
+            JSON.stringify(this.state.heroes)
+            !== JSON.stringify(heroes)
+        ) {
+            this.setState({heroes: heroes})
+        }
+    }
+
+    getHeroNames() {
         const timestamp = new Date().getTime()
         const hash = MD5(timestamp + KEYS.privateKey + KEYS.publicKey).toString()
         const website = "http://gateway.marvel.com/v1/public/characters?nameStartsWith="
-        fetch(`${website}${input}&ts=${timestamp}&apikey=${KEYS.publicKey}&hash=${hash}`,
+        fetch(`${website}${this.state.inputValue}&ts=${timestamp}&apikey=${KEYS.publicKey}&hash=${hash}`,
             {
                 method: 'GET',
             })
             .then((response) => {
                 return response.json()
             }).then(data => {
-                debugger;
-                return data;
+            if(data.data) {
+                this.setHeroes(data.data.results)
+            }
         })
     }
 
-    const heroes = inputValue !== '' ? getHeroNames(inputValue) : []
+    componentDidUpdate() {
+        this.getHeroNames();
+    }
 
-    return (
-        <React.Fragment>
-            <Input inputHandler={setInputValue}/>
-            <SearchItems heroes={heroes}/>
-        </React.Fragment>
-    )
+    render() {
+        return (
+
+            <React.Fragment>
+                <Input inputHandler={this.setInput}/>
+                {this.state.heroes && (
+                    <SearchItems stringToBold={this.state.inputValue} heroes={this.state.heroes}/>
+                )}
+            </React.Fragment>
+        )
+    }
 }
+
 export default Main
