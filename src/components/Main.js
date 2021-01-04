@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Input from "./Input";
 import SearchItems from './SearchItems'
 import {KEYS} from "../constants";
@@ -55,7 +55,6 @@ class Main extends React.Component {
 
     render() {
         return (
-
             <React.Fragment>
                 <Input inputHandler={this.setInput}/>
                 {this.state.heroes && (
