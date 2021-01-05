@@ -3,7 +3,14 @@ import SearchItems from './SearchItems'
 import {KEYS} from "../constants";
 import MD5 from "crypto-js/md5";
 import Header from "./Header";
-
+import Menu from "./Menu";
+import ActionItems from "./ActionItems";
+import Promo from "./Promo";
+import deal from "../assets/panel/deal.png";
+import plattPlus from "../assets/img/platt-plus.png";
+import PromoFooter from "./PromoFooter";
+import RecentlyViewed from "./RecentlyViewed";
+import FooterTiles from "./FooterTiles";
 const FunctionalMain = () => {
 
     const [inputValue, setInputValue] = useState('');
@@ -59,7 +66,33 @@ const FunctionalMain = () => {
             <Header inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
                 <SearchItems stringToBold={inputValue} heroes={heroes}/>
-            )}        
+            )}
+            <Menu />
+            <ActionItems />
+            <Promo src={deal}/>
+            <Promo src={plattPlus}/>
+            <PromoFooter
+                buttonText="Learn More"
+                styleObj={
+                    {
+                        textAlign: 'center',
+                        margin: '-5px auto',
+                        fontWeight: 'bold',
+                        width: '95%',
+                        backgroundColor: 'white',
+                    }
+                }
+                text={
+                    [
+                        'Get Started Today',
+                        <br />, 'Become a ',
+                        <span style={{color:'#083'}}>Platt Plus</span>,
+                        ' Member.'
+                    ]
+                }
+            />
+            <RecentlyViewed />
+            <FooterTiles />
         </React.Fragment>
     )
 }
