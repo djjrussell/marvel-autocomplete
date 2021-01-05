@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Input from "./Input";
 import SearchItems from './SearchItems'
 import { KEYS } from "../constants";
 import MD5 from "crypto-js/md5";
@@ -49,8 +48,7 @@ const FunctionalMain = () => {
 
     return (
         <React.Fragment>
-            <Header />
-            <Input inputHandler={inputHandler}/>
+            <Header inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
                 <SearchItems stringToBold={inputValue} heroes={heroes}/>
             )}        </React.Fragment>

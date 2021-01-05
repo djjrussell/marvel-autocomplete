@@ -4,7 +4,8 @@ const Input = ({inputHandler}) => {
     return (
         <input
             id="autocompleteSearch"
-            placeholder="What are you looking for"
+            placeholder="What are you looking for?"
+            className='margin-auto'
             onChange={(e) => inputHandler(e.target.value)}/>
     )
 }

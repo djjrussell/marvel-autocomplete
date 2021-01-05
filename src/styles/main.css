@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .background-green {
     background-color: #083;
 }
@@ -22,6 +26,47 @@
     margin-right: 0;
 }
 
-.two-em-height {
-    height: 2em;
+.five-em-height {
+    height: 5em;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.padding-five-pixels {
+    padding: 5px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.header {
+    height: 5em;
+    background-color: #008833;
+    width: 100%;
+}
+
+.header-icon {
+    padding: 5px;
+}
+
+#autocompleteSearch {
+    width: 95%;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.25em;
+}
+
+#searchLogo {
+    position: absolute;
+    right: 5%;
+    margin-top: -1.25em;
 }
