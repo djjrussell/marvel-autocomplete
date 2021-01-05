@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import SearchItems from './SearchItems'
-import { KEYS } from "../constants";
+import {KEYS} from "../constants";
 import MD5 from "crypto-js/md5";
 import Header from "./Header";
 
@@ -9,15 +9,23 @@ const FunctionalMain = () => {
     const [inputValue, setInputValue] = useState('');
     const [heroes, setHeroes] = useState([])
 
+    let typingTimer;
+    const doneTypingInterval = 200;
+
     const inputHandler = (input) => {
-        setInputValue(input)
-        if(input === '') {
-            setHeroes([])
+        clearTimeout(typingTimer);
+        if (input || input === '') {
+            typingTimer = setTimeout(() => {
+                setInputValue(input)
+                if (input === '') {
+                    setHeroes([])
+                }
+            }, doneTypingInterval)
         }
     }
 
     const heroesHandler = (newHeroes) => {
-        if(
+        if (
             JSON.stringify(newHeroes) !== JSON.stringify(heroes)
         ) {
             setHeroes(newHeroes);
@@ -25,7 +33,7 @@ const FunctionalMain = () => {
     }
 
     const getHeroNames = () => {
-        if(inputValue === '') {
+        if (inputValue === '') {
             return
         }
         const timestamp = new Date().getTime()
@@ -51,7 +59,8 @@ const FunctionalMain = () => {
             <Header inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
                 <SearchItems stringToBold={inputValue} heroes={heroes}/>
-            )}        </React.Fragment>
+            )}        
+        </React.Fragment>
     )
 }
 export default FunctionalMain
