@@ -18,6 +18,7 @@ const FunctionalMain = () => {
 
     const [inputValue, setInputValue] = useState('');
     const [heroes, setHeroes] = useState([])
+    const [selected, setSelected] = useState('')
 
     let typingTimer;
     const doneTypingInterval = 200;
@@ -27,11 +28,18 @@ const FunctionalMain = () => {
         if (input || input === '') {
             typingTimer = setTimeout(() => {
                 setInputValue(input)
+                setSelected('')
                 if (input === '') {
                     setHeroes([])
                 }
             }, doneTypingInterval)
         }
+    }
+
+    const clickHandler =(clicked) => {
+        setSelected(clicked);
+        setInputValue(clicked)
+        setHeroes([]);
     }
 
     const heroesHandler = (newHeroes) => {
@@ -43,7 +51,7 @@ const FunctionalMain = () => {
     }
 
     const getHeroNames = () => {
-        if (inputValue === '') {
+        if (inputValue === '' || selected !== '') {
             return
         }
         const timestamp = new Date().getTime()
@@ -66,9 +74,9 @@ const FunctionalMain = () => {
 
     return (
         <React.Fragment>
-            <Header inputHandler={inputHandler}/>
+            <Header selected={selected} inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
-                <SearchItems stringToBold={inputValue} heroes={heroes}/>
+                <SearchItems clickHandler={clickHandler} stringToBold={inputValue} heroes={heroes}/>
             )}
             <Menu />
             <ActionItems />

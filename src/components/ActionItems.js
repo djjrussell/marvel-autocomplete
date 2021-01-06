@@ -16,28 +16,6 @@ const ActionItems = () => {
             <ActionItem src={categories} text={ACTION_ITEM_TEXT.categories}/>
             <ActionItem src={search} text={ACTION_ITEM_TEXT.search}/>
             <ActionItem src={scan} text={ACTION_ITEM_TEXT.scan}/>
-            {/*<Promo src={deal}/>*/}
-            {/*<Promo src={plattPlus}/>*/}
-            {/*<PromoFooter*/}
-            {/*    buttonText="Learn More"*/}
-            {/*    styleObj={*/}
-            {/*        {*/}
-            {/*            textAlign: 'center',*/}
-            {/*            margin: '-5px auto',*/}
-            {/*            fontWeight: 'bold',*/}
-            {/*            width: '95%',*/}
-            {/*            backgroundColor: 'white',*/}
-            {/*        }*/}
-            {/*    }*/}
-            {/*    text={*/}
-            {/*        [*/}
-            {/*            'Get Started Today',*/}
-            {/*            <br />, 'Become a ',*/}
-            {/*            <span style={{color:'#083'}}>Platt Plus</span>,*/}
-            {/*            ' Member.'*/}
-            {/*        ]*/}
-            {/*    }*/}
-            {/*/>*/}
         </section>
     )
 };

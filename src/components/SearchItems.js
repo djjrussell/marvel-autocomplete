@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const SearchItems = ({heroes, stringToBold}) => {
+const SearchItems = ({heroes, stringToBold, clickHandler}) => {
 
     const formatHeroName = (name, stringToBold) => {
         const strLength = stringToBold.length
@@ -16,7 +16,7 @@ const SearchItems = ({heroes, stringToBold}) => {
                 {
                     heroes.map((hero) => {
                         const heroNameArray = formatHeroName(hero.name, stringToBold);
-                        return <div key={hero.name}>
+                        return <div onClick={() => clickHandler(hero.name)} key={hero.name}>
                             <b>
                                 {heroNameArray[0]}
                             </b>

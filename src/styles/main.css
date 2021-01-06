@@ -87,6 +87,14 @@
         width: 100%;
     }
 
+    #searchItems {
+        position: absolute;
+        background-color: white;
+        margin-left: 1em;
+        font-size: 1.25em;
+        width: 100%;
+    }
+
     .header-icon {
         padding: 5px;
     }

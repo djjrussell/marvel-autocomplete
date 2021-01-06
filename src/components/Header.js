@@ -8,7 +8,7 @@ import shoppingCartLogo from './../assets/ic/white/ic_shopping_cart.png'
 import searchLogo from './../assets/ic/white/ic_search.png'
 import searchLogoBlack from './../assets/ic/black/ic_search.png'
 
-const Header = ({inputHandler}) => {
+const Header = ({inputHandler, selected}) => {
     return (
         <header className='header'>
             <HeaderIcon src={companyLogo} classes='float-left header-icon' />
@@ -16,7 +16,7 @@ const Header = ({inputHandler}) => {
             <HeaderIcon src={personLogo} classes='float-right header-icon' />
             <HeaderIcon src={shoppingCartLogo} classes='float-right header-icon' />
             <HeaderIcon src={searchLogo} classes='float-right header-icon' />
-            <Input inputHandler={inputHandler} />
+            <Input selected={selected} inputHandler={inputHandler} />
             <img id="searchLogo" src={searchLogoBlack} />
         </header>
     )
