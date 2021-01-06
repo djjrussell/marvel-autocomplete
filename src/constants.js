@@ -24,3 +24,19 @@ export const FOOTER_TILE_TEXT = {
     helpCenter: 'Help Center',
     plattUniversity: 'Platt University'
 }
+
+export const FOOTER_BANNER_TEXT = {
+    footerBannerText: 'Shop better, download the Platt App today'
+}
+
+export const FOOTER_TEXT = {
+    header: 'Support Center',
+    address: '800-25-Platt',
+    phone: '800-257-5288',
+    hours: '4 a.m. - 12 a.m. (pst)',
+    days: '7 Days a week',
+    buttonText: '7 Days a week',
+    contact: 'Contact Us',
+    whatsNew: 'Whats New',
+    faq: 'FAQ\'s'
+}

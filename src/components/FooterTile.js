@@ -9,7 +9,7 @@ const FooterTile = (
     return (
         <div className="footerTile">
             <img src={src}/>
-            <div>
+            <div className="footer-tile-text">
                 {text}
             </div>
         </div>

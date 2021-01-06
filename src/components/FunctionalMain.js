@@ -11,6 +11,9 @@ import plattPlus from "../assets/img/platt-plus.png";
 import PromoFooter from "./PromoFooter";
 import RecentlyViewed from "./RecentlyViewed";
 import FooterTiles from "./FooterTiles";
+import FooterBanner from "./FooterBanner";
+import Footer from "./Footer";
+
 const FunctionalMain = () => {
 
     const [inputValue, setInputValue] = useState('');
@@ -93,6 +96,8 @@ const FunctionalMain = () => {
             />
             <RecentlyViewed />
             <FooterTiles />
+            <FooterBanner />
+            <Footer />
         </React.Fragment>
     )
 }

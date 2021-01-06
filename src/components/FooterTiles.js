@@ -9,7 +9,7 @@ import plattUniversity from './../assets/img/ic_platt-u.png'
 
 const FooterTiles = () => {
     return (
-        <section>
+        <section id="footerTileSection">
             <FooterTile src={superTool}  text={FOOTER_TILE_TEXT.superTool} />
             <FooterTile src={locations}  text={FOOTER_TILE_TEXT.locations} />
             <FooterTile src={helpCenter}  text={FOOTER_TILE_TEXT.helpCenter} />
