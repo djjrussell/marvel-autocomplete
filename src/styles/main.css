@@ -1,67 +1,221 @@
-@media (min-width:320px) {
+body {
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+    font-family: "PT Sans", sans-serif;
+}
 
-    body {
-        margin: 0;
-        background-color: rgb(230, 230, 230);
-        font-family: "PT Sans", sans-serif;
-    }
+section {
+    background-color: rgb(230, 230, 230);
+}
+
+ul {
+    margin-top: 0;
+    background-color: white;
+    list-style-type: none;
+}
+
+button {
+    border-radius: 25px 25px 25px 25px
+}
+
+.header {
+    height: 5em;
+    background-color: #008833;
+    width: 100%;
+}
+
+#searchItems {
+    position: absolute;
+    background-color: white;
+    margin-left: 1em;
+    font-size: 1.25em;
+    width: 100%;
+}
+
+.header-icon {
+    padding: 5px;
+}
+
+#autocompleteSearch {
+    width: 95%;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.75em;
+}
+
+#searchLogo {
+    position: absolute;
+    right: 5%;
+    margin-top: -1.5em;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.menu-item * {
+    display: inline-block;
+}
+
+.menu-item h2 {
+    font-weight: 100;
+    color: rgb(51, 51, 51);
+    font-size: 1.5em;
+    margin-left: .75em;
+}
+
+.menu-arrow {
+    float: right;
+    margin: 25px 15px;
+}
+
+.promoFooterButton {
+    border: none;
+    font-size: 1.2em;
+    background-color: #ddd;
+    color: rgb(51,51,51);
+    padding: 10px 20px;
+    margin: 1em auto;
+    width: 70%
+}
+
+
+#recentlyViewed{
+    background-color: white;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+#recentlyViewedHeader {
+    width: 100%;
+}
+#recentlyViewedHeader h2 {
+    width: 50%;
+    display: inline-block;
+    font-size: 1.1em;
+    margin-top: -5px;
+}
+
+#recentlyViewedGallery {
+    width: 100%;
+    display: block;
+}
+
+#recentlyViewedGallery img {
+    width: 33%;
+}
+
+#footerTileSection {
+    text-align: center;
+}
+
+.footerTile{
+    width: 35%;
+    background-color: white;
+    display: inline-block;
+    padding: 1em;
+    height: 140px;
+    vertical-align: top;
+    margin: .75em;
+    font-weight: 900;
+}
+.footerTile{
+    vertical-align: top;
+}
+
+.footer-tile-text{
+    vertical-align: bottom;
+}
+
+#footerBannerContainer {
+    background-image: url("./../assets/panel/app-get-banner.png");
+    width: 95%;
+    height: 124px;
+}
+/*---------- TABLETS ---------*/
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)   {
 
     section {
-        background-color: rgb(230, 230, 230);
+        width: 44%;
+        display: inline-block;
         margin: auto;
+        padding: 1em;
     }
 
-    ul {
-        margin-top: 0;
+    #plusMemberPromo {
+        margin-left: 1em;
         background-color: white;
     }
 
-    section {
+    #productMarkets {
         width: 95%;
     }
 
-    button {
-        border-radius: 25px 25px 25px 25px
+    #menuContainer {
+        width: 100%;
+        text-align: center;
+        margin-left: -42px;
     }
 
-    .background-green {
-        background-color: #083;
+    .menu-item {
+        display: inline-block;
+        width: 33%;
+        border: 1px solid lightgrey;
     }
 
-    .position-relative {
-        position: relative;
+    .menu-item.main-menu-item {
+        width: 100%;
+        display: block;
     }
 
-    .position-absolute {
-        position: absolute
+    #actionItems {
+        display: none;
     }
 
-    .no-left {
-        left: 0;
+    #productMarkets {
+        display: block;
     }
 
-    .no-right {
-        right: 0;
+    .productMarket {
+        display: inline-block;
+        background-color: white;
+        text-align: center;
+        margin: .35em;
     }
 
-    .no-margin-right {
-        margin-right: 0;
+    .productMarketText {
+        padding: 1em 0;
     }
 
-    .five-em-height {
-        height: 5em;
+    #footerTileSection {
+        width: 100%
     }
 
-    .float-left {
-        float: left;
+    .footerTile {
+        width: 15%;
     }
-
-    .float-right {
-        float: right;
+    #footerBannerSection {
+        width:100%;
+        margin: auto;
     }
+}
 
-    .padding-five-pixels {
-        padding: 5px;
+/* ---- PHONE --------*/
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 736px)  {
+
+    section {
+        margin: auto;
+        width: 95%;
     }
 
     .margin-auto {
@@ -77,61 +231,9 @@
     }
 
     /*above is utility classes*/
-    ul {
-        list-style-type: none;
-    }
-
-    .header {
-        height: 5em;
-        background-color: #008833;
-        width: 100%;
-    }
-
-    #searchItems {
-        position: absolute;
-        background-color: white;
-        margin-left: 1em;
-        font-size: 1.25em;
-        width: 100%;
-    }
-
-    .header-icon {
-        padding: 5px;
-    }
-
-    #autocompleteSearch {
-        width: 95%;
-        display: block;
-        margin: auto;
-        border: none;
-        border-radius: 2px;
-        font-size: 1.75em;
-    }
-
-    #searchLogo {
-        position: absolute;
-        right: 5%;
-        margin-top: -1.5em;
-    }
 
     .menu-item {
         margin-right: 2em;
-    }
-
-    .menu-item * {
-        display: inline-block;
-    }
-
-    .menu-item h2 {
-        font-weight: 100;
-        color: rgb(51, 51, 51);
-        font-size: 1.5em;
-        margin-left: 2em;
-    }
-
-    .menu-arrow {
-        float: right;
-        margin: 25px 15px;
     }
 
     .action-item-image-container {
@@ -187,59 +289,55 @@
         width: 70%
     }
 
-    #recentlyViewed{
-        background-color: white;
-        margin: 1em auto;
-        padding: 1em;
-    }
+    /*#recentlyViewed{*/
+    /*    background-color: white;*/
+    /*    margin: 1em auto;*/
+    /*    padding: 1em;*/
+    /*}*/
 
-    #recentlyViewedHeader {
-        width: 100%;
-    }
-    #recentlyViewedHeader h2 {
-        width: 50%;
-        display: inline-block;
-        font-size: 1.1em;
-        margin-top: -5px;
-    }
+    /*#recentlyViewedHeader {*/
+    /*    width: 100%;*/
+    /*}*/
+    /*#recentlyViewedHeader h2 {*/
+    /*    width: 50%;*/
+    /*    display: inline-block;*/
+    /*    font-size: 1.1em;*/
+    /*    margin-top: -5px;*/
+    /*}*/
 
-    #recentlyViewedGallery {
-        width: 100%;
-        display: block;
-    }
+    /*#recentlyViewedGallery {*/
+    /*    width: 100%;*/
+    /*    display: block;*/
+    /*}*/
 
-    #recentlyViewedGallery img {
-        width: 33%;
-    }
+    /*#recentlyViewedGallery img {*/
+    /*    width: 33%;*/
+    /*}*/
 
-    #footerTileSection {
-        text-align: center;
-    }
+    /*#footerTileSection {*/
+    /*    text-align: center;*/
+    /*}*/
 
-    .footerTile{
-        width: 35%;
-        background-color: white;
-        display: inline-block;
-        padding: 1em;
-        height: 140px;
-        vertical-align: top;
-        margin: .75em;
-        font-weight: 900;
-    }
-    .footerTile{
-        vertical-align: top;
-    }
+    /*.footerTile{*/
+    /*    width: 35%;*/
+    /*    background-color: white;*/
+    /*    display: inline-block;*/
+    /*    padding: 1em;*/
+    /*    height: 140px;*/
+    /*    vertical-align: top;*/
+    /*    margin: .75em;*/
+    /*    font-weight: 900;*/
+    /*}*/
+    /*.footerTile{*/
+    /*    vertical-align: top;*/
+    /*}*/
 
-    .footer-tile-text{
-        vertical-align: bottom;
-    }
-
+    /*.footer-tile-text{*/
+    /*    vertical-align: bottom;*/
+    /*}*/
     #footerBannerContainer {
-        background-image: url("./../assets/panel/app-get-banner.png");
-        background-position: right;
-        width: 95%;
-        height: 124px;
         margin: 1em auto;
+        background-position: right;
     }
 
     #footer {
@@ -278,5 +376,9 @@
         vertical-align: super;
         margin-left: 10px;
         color: rgb(51,51,51)
+    }
+
+    #productMarkets {
+        display: none;
     }
 }

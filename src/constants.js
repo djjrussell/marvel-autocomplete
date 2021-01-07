@@ -9,6 +9,7 @@ export const MENU_TEXT = {
     myList: "My List",
     liveHelp: "Live Help",
     pim: "PIM",
+    account: "Account",
     branchLocations: "Branch Locations",
 }
 
@@ -39,4 +40,13 @@ export const FOOTER_TEXT = {
     contact: 'Contact Us',
     whatsNew: 'Whats New',
     faq: 'FAQ\'s'
+}
+
+export const PRODUCT_MARKETS = {
+    datacom: 'DataComm',
+    hvac: 'HVAC',
+    industrial: "Industrial",
+    lighting: 'Lighting',
+    energy: "Energy Efficiency",
+    utility: 'Utility',
 }

@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react'
 import SearchItems from './SearchItems'
 import {KEYS} from "../constants";
 import MD5 from "crypto-js/md5";
+import {
+    isTablet,
+    isMobileOnly,
+} from "react-device-detect";
 import Header from "./Header";
 import Menu from "./Menu";
 import ActionItems from "./ActionItems";
@@ -13,6 +17,7 @@ import RecentlyViewed from "./RecentlyViewed";
 import FooterTiles from "./FooterTiles";
 import FooterBanner from "./FooterBanner";
 import Footer from "./Footer";
+import ProductMarkets from "./ProductMarkets";
 
 const FunctionalMain = () => {
 
@@ -36,7 +41,7 @@ const FunctionalMain = () => {
         }
     }
 
-    const clickHandler =(clicked) => {
+    const clickHandler = (clicked) => {
         setSelected(clicked);
         setInputValue(clicked)
         setHeroes([]);
@@ -78,34 +83,62 @@ const FunctionalMain = () => {
             {heroes && heroes.length > 0 && (
                 <SearchItems clickHandler={clickHandler} stringToBold={inputValue} heroes={heroes}/>
             )}
-            <Menu />
-            <ActionItems />
+            <Menu/>
+            <ActionItems/>
+            <ProductMarkets/>
             <Promo src={deal}/>
-            <Promo src={plattPlus}/>
-            <PromoFooter
-                buttonText="Learn More"
-                styleObj={
-                    {
-                        textAlign: 'center',
-                        margin: '-5px auto',
-                        fontWeight: 'bold',
-                        width: '95%',
-                        backgroundColor: 'white',
+            <RecentlyViewed/>
+            <Promo idToAdd="plusMemberPromo" src={plattPlus}/>
+            {isMobileOnly && (
+                <PromoFooter
+                    buttonText="Learn More"
+                    styleObj={
+                        {
+                            textAlign: 'center',
+                            margin: '-5px auto',
+                            fontWeight: 'bold',
+                            width: '95%',
+                            backgroundColor: 'white',
+                        }
                     }
-                }
-                text={
-                    [
-                        'Get Started Today',
-                        <br />, 'Become a ',
-                        <span style={{color:'#083'}}>Platt Plus</span>,
-                        ' Member.'
-                    ]
-                }
-            />
-            <RecentlyViewed />
-            <FooterTiles />
-            <FooterBanner />
-            <Footer />
+                    text={
+                        [
+                            'Get Started Today',
+                            <br/>, 'Become a ',
+                            <span style={{color: '#083'}}>Platt Plus</span>,
+                            ' Member.'
+                        ]
+                    }
+                />)
+            }
+            {isTablet && (
+                <PromoFooter
+                    buttonText="Learn More"
+                    styleObj={
+                        {
+                            textAlign: 'center',
+                            marginLeft: '0',
+                            display: 'inline-block',
+                            fontWeight: 'bold',
+                            width: '45',
+                            backgroundColor: 'white',
+                            height: '136px',
+                            verticalAlign: 'top',
+                        }
+                    }
+                    text={
+                        [
+                            'Get Started Today',
+                            <br/>, 'Become a ',
+                            <span style={{color: '#083'}}>Platt Plus</span>,
+                            ' Member.'
+                        ]
+                    }
+                />)
+            }
+            <FooterTiles/>
+            <FooterBanner/>
+            <Footer/>
         </React.Fragment>
     )
 }

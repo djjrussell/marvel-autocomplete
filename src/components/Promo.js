@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Promo = ({src}) => {
+const Promo = ({src, idToAdd=''}) => {
     return (
-        <section className="promo-container">
+        <section id={idToAdd} className="promo-container">
             <img src={src} />
         </section>
     )

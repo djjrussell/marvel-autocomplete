@@ -1,10 +1,11 @@
 import React from 'react'
 import arrow from './../assets/ic/black/ic_arrow_forward.png'
 
-const MenuItem = ({src, text, border, styleObject={}}) => {
+const MenuItem = ({src, text, border, styleObject = {}, isMain = false}) => {
 
-    const classToAdd = border === "bottom" ? "border-bottom" : border === "top" ? "border-top" : ""
-    const classList = `menu-item ${classToAdd}`
+    const classToAddBorder = border === "bottom" ? "border-bottom" : border === "top" ? "border-top" : ""
+    const classToAddMain = isMain ? 'main-menu-item' : ""
+    const classList = `menu-item ${classToAddBorder} ${classToAddMain}`
 
     return (
         <li className={classList} style={styleObject}>

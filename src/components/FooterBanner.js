@@ -5,7 +5,7 @@ import {FOOTER_BANNER_TEXT} from '../constants'
 const FooterBanner = () => {
 
     return (
-        <section>
+        <section id="footerBannerSection">
             <div id='footerBannerContainer'/>
             <PromoFooter styleObj={
                 {
