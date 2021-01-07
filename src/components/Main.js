@@ -42,10 +42,9 @@ const Main = () => {
     }
 
     const clickHandler = (clicked) => {
+        setHeroes([]);
         setSelected(clicked);
         setInputValue(clicked)
-        setHeroes([]);
-        debugger;
     }
 
     const heroesHandler = (newHeroes) => {
