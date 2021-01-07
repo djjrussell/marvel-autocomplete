@@ -47,6 +47,6 @@ export const PRODUCT_MARKETS = {
     hvac: 'HVAC',
     industrial: "Industrial",
     lighting: 'Lighting',
-    energy: "Energy Efficiency",
+    energy: ['Energy', <br/>,  ' Efficiency'],
     utility: 'Utility',
 }

@@ -8,7 +8,7 @@ const FooterTile = (
 ) => {
     return (
         <div className="footerTile">
-            <img src={src}/>
+            <img className="footerTileImage" src={src}/>
             <div className="footer-tile-text">
                 {text}
             </div>

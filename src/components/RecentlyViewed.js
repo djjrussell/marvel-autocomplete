@@ -4,7 +4,7 @@ import otherTool from './../assets/recent/22.png'
 
 const RecentlyViewed = () => {
     return (
-        <section>
+        <section id="recentlyViewedSection">
             <article id="recentlyViewed">
                 <div id="recentlyViewedHeader">
                     <h2 style={{textAlign: 'left'}}>Recently Viewed</h2>

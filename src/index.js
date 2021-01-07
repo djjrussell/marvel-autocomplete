@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.css';
-import FunctionalMain from "./components/FunctionalMain";
+import Main from "./components/Main";
 
 ReactDOM.render(
   <React.Fragment>
-    <FunctionalMain />
+    <Main />
   </React.Fragment>,
   document.getElementById('root')
 );

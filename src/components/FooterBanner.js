@@ -14,9 +14,11 @@ const FooterBanner = () => {
                     fontWeight: 'bold',
                     color: 'rgb(51,51,51)',
                     marginTop: '-15px',
+                    marginBottom: '1em',
                     padding: '1em 0',
                     width: '95%',
-                }
+                    boxShadow: '0 0 10px grey'
+            }
             }
                          actionable={false}
                          text={FOOTER_BANNER_TEXT.footerBannerText}

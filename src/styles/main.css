@@ -19,7 +19,7 @@ button {
 }
 
 .header {
-    height: 5em;
+    height: 7em;
     background-color: #008833;
     width: 100%;
 }
@@ -40,15 +40,20 @@ button {
     width: 95%;
     display: block;
     margin: auto;
-    border: none;
-    border-radius: 2px;
-    font-size: 1.75em;
+    height: 50px;
+    font-size: 1em;
+    line-height: 1.42857;
+    color: #666;
+    background-color: #fff;
+    background-image: none;
+    border: .0625em solid #e2e2e2;
+    border-radius: .1875em;
 }
 
 #searchLogo {
     position: absolute;
     right: 5%;
-    margin-top: -1.5em;
+    margin-top: -2em;
 }
 
 .float-left {
@@ -88,8 +93,8 @@ button {
 
 #recentlyViewed{
     background-color: white;
-    margin: 1em auto;
     padding: 1em;
+    box-shadow: 0 0 10px grey;
 }
 
 #recentlyViewedHeader {
@@ -111,12 +116,8 @@ button {
     width: 33%;
 }
 
-#footerTileSection {
-    text-align: center;
-}
-
 .footerTile{
-    width: 35%;
+    width: 33%;
     background-color: white;
     display: inline-block;
     padding: 1em;
@@ -137,6 +138,14 @@ button {
     background-image: url("./../assets/panel/app-get-banner.png");
     width: 95%;
     height: 124px;
+    box-shadow: 0 0 10px grey;
+}
+
+#todaysDeal img{
+    box-shadow: 0 0 10px grey;
+}
+.footerTileImage {
+    margin: 0 1em;
 }
 /*---------- TABLETS ---------*/
 @media only screen
@@ -189,10 +198,9 @@ and (max-device-width: 1024px)   {
         background-color: white;
         text-align: center;
         margin: .35em;
-    }
-
-    .productMarketText {
-        padding: 1em 0;
+        height: 140px;
+        vertical-align: top;
+        box-shadow: 0 0 10px grey;
     }
 
     #footerTileSection {
@@ -200,12 +208,56 @@ and (max-device-width: 1024px)   {
     }
 
     .footerTile {
-        width: 15%;
+        width: 16%;
+        box-shadow: 0 0 10px grey;
     }
+
     #footerBannerSection {
         width:100%;
         margin: auto;
     }
+    #recentlyViewedSection {
+        vertical-align: top;
+        height: 165px;
+    }
+}
+
+#footer {
+    text-align: center;
+    background-color: grey;
+    margin-bottom: 2em;
+    padding: 1em 0
+}
+
+#footer span.footerFooterText{
+    color: white;
+    width: 33%;
+    margin: 1em;
+}
+
+#footerHeader,
+#footerAddress,
+#footerPhone {
+    color: white;
+    padding: .25em 0
+}
+
+#footerHours,
+#footerDays {
+    color: lightgrey;
+    padding: .25em 0
+}
+
+#footerButton {
+    width: 50%;
+    padding: .5em 0;
+    margin-bottom: 1em;
+}
+
+#footerButtonText{
+    vertical-align: super;
+    margin-left: 10px;
+    color: rgb(51,51,51)
 }
 
 /* ---- PHONE --------*/
@@ -270,13 +322,13 @@ and (max-device-width: 736px)  {
     }
 
     .promo-container {
-        margin: auto;
+        margin: .75em auto 0;
         width: 95%;
+        box-shadow: 0 0 10px grey;
     }
 
     .promo-container img {
         width: 100%;
-        margin-top: 1em;
     }
 
     .promoFooterButton {
@@ -289,93 +341,13 @@ and (max-device-width: 736px)  {
         width: 70%
     }
 
-    /*#recentlyViewed{*/
-    /*    background-color: white;*/
-    /*    margin: 1em auto;*/
-    /*    padding: 1em;*/
-    /*}*/
+    .footerTile {
+        box-shadow: 0 0 10px grey;
+    }
 
-    /*#recentlyViewedHeader {*/
-    /*    width: 100%;*/
-    /*}*/
-    /*#recentlyViewedHeader h2 {*/
-    /*    width: 50%;*/
-    /*    display: inline-block;*/
-    /*    font-size: 1.1em;*/
-    /*    margin-top: -5px;*/
-    /*}*/
-
-    /*#recentlyViewedGallery {*/
-    /*    width: 100%;*/
-    /*    display: block;*/
-    /*}*/
-
-    /*#recentlyViewedGallery img {*/
-    /*    width: 33%;*/
-    /*}*/
-
-    /*#footerTileSection {*/
-    /*    text-align: center;*/
-    /*}*/
-
-    /*.footerTile{*/
-    /*    width: 35%;*/
-    /*    background-color: white;*/
-    /*    display: inline-block;*/
-    /*    padding: 1em;*/
-    /*    height: 140px;*/
-    /*    vertical-align: top;*/
-    /*    margin: .75em;*/
-    /*    font-weight: 900;*/
-    /*}*/
-    /*.footerTile{*/
-    /*    vertical-align: top;*/
-    /*}*/
-
-    /*.footer-tile-text{*/
-    /*    vertical-align: bottom;*/
-    /*}*/
     #footerBannerContainer {
         margin: 1em auto;
         background-position: right;
-    }
-
-    #footer {
-        text-align: center;
-        background-color: grey;
-        margin-bottom: 2em;
-        padding: 1em 0
-    }
-
-    #footer span.footerFooterText{
-        color: white;
-        width: 33%;
-        margin: 2em;
-    }
-
-    #footerHeader,
-    #footerAddress,
-    #footerPhone {
-        color: white;
-        padding: .25em 0
-    }
-
-    #footerHours,
-    #footerDays {
-        color: lightgrey;
-        padding: .25em 0
-    }
-
-    #footerButton {
-        width: 50%;
-        padding: .5em 0;
-        margin-bottom: 1em;
-    }
-
-    #footerButtonText{
-        vertical-align: super;
-        margin-left: 10px;
-        color: rgb(51,51,51)
     }
 
     #productMarkets {

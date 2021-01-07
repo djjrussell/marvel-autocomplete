@@ -1,68 +1,147 @@
-import React from 'react'
-import Input from "./Input";
+import React, {useState, useEffect} from 'react'
 import SearchItems from './SearchItems'
 import {KEYS} from "../constants";
 import MD5 from "crypto-js/md5";
+import {
+    isTablet,
+    isMobileOnly,
+} from "react-device-detect";
+import Header from "./Header";
+import Menu from "./Menu";
+import ActionItems from "./ActionItems";
+import Promo from "./Promo";
+import deal from "../assets/panel/deal.png";
+import plattPlus from "../assets/img/platt-plus.png";
+import PromoFooter from "./PromoFooter";
+import RecentlyViewed from "./RecentlyViewed";
+import FooterTiles from "./FooterTiles";
+import FooterBanner from "./FooterBanner";
+import Footer from "./Footer";
+import ProductMarkets from "./ProductMarkets";
 
-class Main extends React.Component {
+const Main = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputValue: ' ',
-            heroes: [],
-        };
-        this.setInput = this.setInput.bind(this)
-        this.setHeroes = this.setHeroes.bind(this)
-    }
+    const [inputValue, setInputValue] = useState('');
+    const [heroes, setHeroes] = useState([])
+    const [selected, setSelected] = useState('')
 
-    setInput(input) {
-        this.setState({inputValue: input})
-        if(input === '') {
-            this.setHeroes([])
+    let typingTimer;
+    const doneTypingInterval = 200;
+
+    const inputHandler = (input) => {
+        clearTimeout(typingTimer);
+        if (input || input === '') {
+            typingTimer = setTimeout(() => {
+                setInputValue(input)
+                setSelected('')
+                if (input === '') {
+                    setHeroes([])
+                }
+            }, doneTypingInterval)
         }
     }
 
-    setHeroes(heroes) {
-        if(
-            JSON.stringify(this.state.heroes)
-            !== JSON.stringify(heroes)
+    const clickHandler = (clicked) => {
+        setSelected(clicked);
+        setInputValue(clicked)
+        setHeroes([]);
+        debugger;
+    }
+
+    const heroesHandler = (newHeroes) => {
+        if (
+            JSON.stringify(newHeroes) !== JSON.stringify(heroes)
         ) {
-            this.setState({heroes: heroes})
+            setHeroes(newHeroes);
         }
     }
 
-    getHeroNames() {
+    const getHeroNames = () => {
+        if (inputValue === '' || selected !== '') {
+            return
+        }
         const timestamp = new Date().getTime()
         const hash = MD5(timestamp + KEYS.privateKey + KEYS.publicKey).toString()
         const website = "http://gateway.marvel.com/v1/public/characters?nameStartsWith="
-        fetch(`${website}${this.state.inputValue}&ts=${timestamp}&apikey=${KEYS.publicKey}&hash=${hash}`,
+        fetch(`${website}${inputValue}&ts=${timestamp}&apikey=${KEYS.publicKey}&hash=${hash}`,
             {
                 method: 'GET',
             })
             .then((response) => {
                 return response.json()
             }).then(data => {
-            if(data.data) {
-                this.setHeroes(data.data.results)
-            }
+            heroesHandler(data.data.results);
         })
     }
 
-    componentDidUpdate() {
-        this.getHeroNames();
-    }
+    useEffect(() => {
+        getHeroNames();
+    })
 
-    render() {
-        return (
-            <React.Fragment>
-                <Input inputHandler={this.setInput}/>
-                {this.state.heroes && (
-                    <SearchItems stringToBold={this.state.inputValue} heroes={this.state.heroes}/>
-                )}
-            </React.Fragment>
-        )
-    }
+    return (
+        <React.Fragment>
+            <Header selected={selected} inputHandler={inputHandler}/>
+            {heroes && heroes.length > 0 && (
+                <SearchItems clickHandler={clickHandler} stringToBold={inputValue} heroes={heroes}/>
+            )}
+            <Menu/>
+            <ActionItems/>
+            <ProductMarkets/>
+            <Promo idToAdd="todaysDeal" src={deal}/>
+            <RecentlyViewed/>
+            <Promo idToAdd="plusMemberPromo" src={plattPlus}/>
+            {isMobileOnly && (
+                <PromoFooter
+                    buttonText="Learn More"
+                    styleObj={
+                        {
+                            textAlign: 'center',
+                            margin: '-5px auto',
+                            fontWeight: 'bold',
+                            width: '95%',
+                            backgroundColor: 'white',
+                            boxShadow: '0 0 10px grey',
+                        }
+                    }
+                    text={
+                        [
+                            'Get Started Today',
+                            <br/>, 'Become a ',
+                            <span style={{color: '#083'}}>Platt Plus</span>,
+                            ' Member.'
+                        ]
+                    }
+                />)
+            }
+            { isTablet && (
+                <PromoFooter
+                    buttonText="Learn More"
+                    styleObj={
+                        {
+                            textAlign: 'center',
+                            marginLeft: '0',
+                            display: 'inline-block',
+                            fontWeight: 'bold',
+                            width: '40%',
+                            backgroundColor: 'white',
+                            height: '136px',
+                            verticalAlign: 'top',
+                        }
+                    }
+                    text={
+                        [
+                            'Get Started Today',
+                            <br/>, 'Become a ',
+                            <span style={{color: '#083'}}>Platt Plus</span>,
+                            ' Member.'
+                        ]
+                    }
+                />)
+            }
+            <FooterTiles/>
+            <FooterBanner/>
+            <Footer/>
+        </React.Fragment>
+    )
 }
-
 export default Main
