@@ -79,7 +79,6 @@ const Main = () => {
 
     return (
         <React.Fragment>
-            asdfasdf
             <Header selected={selected} inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
                 <SearchItems clickHandler={clickHandler} stringToBold={inputValue} heroes={heroes}/>
