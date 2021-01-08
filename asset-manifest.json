@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/marvel-autocomplete/static/css/main.c4e15a5c.chunk.css",
-    "main.js": "/marvel-autocomplete/static/js/main.cbf74ad0.chunk.js",
-    "main.js.map": "/marvel-autocomplete/static/js/main.cbf74ad0.chunk.js.map",
+    "main.css": "/marvel-autocomplete/static/css/main.6e2ea221.chunk.css",
+    "main.js": "/marvel-autocomplete/static/js/main.5dc26c1b.chunk.js",
+    "main.js.map": "/marvel-autocomplete/static/js/main.5dc26c1b.chunk.js.map",
     "runtime-main.js": "/marvel-autocomplete/static/js/runtime-main.3b3e0709.js",
     "runtime-main.js.map": "/marvel-autocomplete/static/js/runtime-main.3b3e0709.js.map",
     "static/js/2.9626c1c0.chunk.js": "/marvel-autocomplete/static/js/2.9626c1c0.chunk.js",
     "static/js/2.9626c1c0.chunk.js.map": "/marvel-autocomplete/static/js/2.9626c1c0.chunk.js.map",
     "index.html": "/marvel-autocomplete/index.html",
-    "static/css/main.c4e15a5c.chunk.css.map": "/marvel-autocomplete/static/css/main.c4e15a5c.chunk.css.map",
+    "static/css/main.6e2ea221.chunk.css.map": "/marvel-autocomplete/static/css/main.6e2ea221.chunk.css.map",
     "static/js/2.9626c1c0.chunk.js.LICENSE.txt": "/marvel-autocomplete/static/js/2.9626c1c0.chunk.js.LICENSE.txt",
     "static/media/11.98502753.png": "/marvel-autocomplete/static/media/11.98502753.png",
     "static/media/main.css": "/marvel-autocomplete/static/media/app-get-banner.7e932f79.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.3b3e0709.js",
     "static/js/2.9626c1c0.chunk.js",
-    "static/css/main.c4e15a5c.chunk.css",
-    "static/js/main.cbf74ad0.chunk.js"
+    "static/css/main.6e2ea221.chunk.css",
+    "static/js/main.5dc26c1b.chunk.js"
   ]
 }
