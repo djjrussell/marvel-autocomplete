@@ -9,7 +9,6 @@ import liveHelp from './../assets/ic/green/ic_chat - active.png'
 import pim from './../assets/ic/black/ic_check_circle.png'
 import avatar from './../assets/ic/black/ic_avatar.png'
 import branchLocations from './../assets/ic/black/ic_place.png'
-//TODO find person icon
 
 const Menu = () => {
     return (

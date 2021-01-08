@@ -37,7 +37,7 @@ button {
 }
 
 #autocompleteSearch {
-    width: 95%;
+    width: 90%;
     display: block;
     margin: auto;
     height: 50px;
@@ -139,6 +139,10 @@ button {
     width: 95%;
     height: 124px;
     box-shadow: 0 0 10px grey;
+}
+
+#todaysDeal {
+    margin-bottom: 1em;
 }
 
 #todaysDeal img{
@@ -252,6 +256,7 @@ and (max-device-width: 1024px)   {
     width: 50%;
     padding: .5em 0;
     margin-bottom: 1em;
+    background-color: #dddddd;
 }
 
 #footerButtonText{
