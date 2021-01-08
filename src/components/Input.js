@@ -14,7 +14,7 @@ const Input = ({inputHandler, selected}) => {
                 id="autocompleteSearch"
                 placeholder="What are you looking for?"
                 className='margin-auto'
-                onKeyUp={(e) => inputHandler(e.target.value)}
+                onInput={(e) => inputHandler(e.target.value)}
                 value={selected}
             />
         )
