@@ -27,7 +27,6 @@ const SearchItems = ({heroes, stringToBold, clickHandler}) => {
             </div>
         )
     }
-
     return <div/>
 }
 
