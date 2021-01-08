@@ -61,7 +61,7 @@ const Main = () => {
         }
         const timestamp = new Date().getTime()
         const hash = MD5(timestamp + KEYS.privateKey + KEYS.publicKey).toString()
-        const website = "http://gateway.marvel.com/v1/public/characters?nameStartsWith="
+        const website = "https://gateway.marvel.com/v1/public/characters?nameStartsWith="
         fetch(`${website}${inputValue}&ts=${timestamp}&apikey=${KEYS.publicKey}&hash=${hash}`,
             {
                 method: 'GET',
@@ -79,6 +79,7 @@ const Main = () => {
 
     return (
         <React.Fragment>
+            asdfasdf
             <Header selected={selected} inputHandler={inputHandler}/>
             {heroes && heroes.length > 0 && (
                 <SearchItems clickHandler={clickHandler} stringToBold={inputValue} heroes={heroes}/>
